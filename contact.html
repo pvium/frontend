@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="index.html">Acme Tools</a>
       <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
       </nav>
     </header>
-    <main class="page-shell">
+    <main id="main-content" class="page-shell">
       <section class="hero compact" aria-labelledby="contact-heading">
         <p class="eyebrow">Start a conversation</p>
         <h1 id="contact-heading">Contact Acme Tools</h1>
@@ -34,6 +37,19 @@
           <h2>Founder support</h2>
           <p>Ask about lightweight tools for planning, release notes, and handoffs.</p>
         </article>
+      </section>
+      <section class="workflow" aria-labelledby="contact-details-heading">
+        <h2 id="contact-details-heading">What helps us respond</h2>
+        <dl>
+          <div>
+            <dt>Team size</dt>
+            <dd>Tell us how many people share the product workflow.</dd>
+          </div>
+          <div>
+            <dt>Main blocker</dt>
+            <dd>Point to the planning, shipping, or handoff step that slows you down.</dd>
+          </div>
+        </dl>
       </section>
     </main>
     <footer>We respond to practical product questions.</footer>

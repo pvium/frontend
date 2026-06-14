@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="index.html">Acme Tools</a>
       <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </header>
-    <main class="page-shell">
+    <main id="main-content" class="page-shell">
       <section class="hero compact" aria-labelledby="about-heading">
         <p class="eyebrow">About the team</p>
         <h1 id="about-heading">About Acme Tools</h1>
@@ -33,6 +36,14 @@
           <h2>Maintainer friendly</h2>
           <p>Every workflow favors clear ownership, visible status, and low setup cost.</p>
         </article>
+      </section>
+      <section class="workflow" aria-labelledby="values-heading">
+        <h2 id="values-heading">How we judge useful software</h2>
+        <ol>
+          <li>It should explain current work without a meeting.</li>
+          <li>It should make the next decision easier to see.</li>
+          <li>It should stay small enough for busy teams to maintain.</li>
+        </ol>
       </section>
     </main>
     <footer>Purpose-built tools for focused software teams.</footer>

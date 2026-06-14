@@ -11,18 +11,22 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="index.html" aria-current="page">Acme Tools</a>
       <nav aria-label="Primary navigation">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </header>
-    <main class="page-shell">
+    <main id="main-content" class="page-shell">
       <section class="hero" aria-labelledby="home-heading">
         <p class="eyebrow">Simple software for focused teams</p>
         <h1 id="home-heading">Welcome to Acme Tools</h1>
         <p>Acme Tools helps small teams ship simple software faster.</p>
+        <a class="button-link" href="contact.html">Start with Acme Tools</a>
       </section>
       <section class="content-grid" aria-label="Acme Tools priorities">
         <article>
@@ -33,6 +37,14 @@
           <h2>Faster delivery</h2>
           <p>Turn recurring release chores into clear team routines.</p>
         </article>
+      </section>
+      <section class="workflow" aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">Built around small-team rhythm</h2>
+        <ol>
+          <li>Capture the next product move in one place.</li>
+          <li>Turn the move into a short, testable checklist.</li>
+          <li>Ship, review, and keep the next handoff clear.</li>
+        </ol>
       </section>
     </main>
     <footer>Built for founders, maintainers, and small product teams.</footer>

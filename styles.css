@@ -22,6 +22,22 @@ body {
   line-height: 1.6;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1;
+  transform: translateY(-150%);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background: var(--accent-strong);
+  color: #ffffff;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -39,9 +55,16 @@ body {
 }
 
 nav {
+  min-width: 0;
+}
+
+nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 nav a,
@@ -116,6 +139,24 @@ footer {
   margin-top: 1rem;
 }
 
+.workflow {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+}
+
+.workflow ol,
+.workflow dl {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.workflow li + li,
+.workflow div + div {
+  margin-top: 0.5rem;
+}
+
 article {
   padding: 1.25rem;
   border: 1px solid var(--line);
@@ -132,4 +173,21 @@ footer {
   padding: 1.5rem clamp(1rem, 4vw, 3rem);
   border-top: 1px solid var(--line);
   text-align: center;
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav ul {
+    gap: 0.5rem 1rem;
+  }
+
+  .hero,
+  .workflow,
+  article {
+    padding: 1rem;
+  }
 }
