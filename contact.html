@@ -3,16 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Contact Acme Tools for simple product software questions."
+    >
     <title>Contact Acme Tools</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-    </nav>
-    <main>
-      <h1>Contact Acme Tools</h1>
-      <p>Email us at hello@example.com for product questions.</p>
+    <header class="site-header">
+      <a class="brand" href="index.html">Acme Tools</a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <main class="page-shell">
+      <section class="hero compact" aria-labelledby="contact-heading">
+        <p class="eyebrow">Start a conversation</p>
+        <h1 id="contact-heading">Contact Acme Tools</h1>
+        <p>Email us at hello@example.com for product questions.</p>
+        <a class="button-link" href="mailto:hello@example.com">hello@example.com</a>
+      </section>
+      <section class="content-grid" aria-label="Contact expectations">
+        <article>
+          <h2>Product questions</h2>
+          <p>Share what your team is shipping and where the workflow feels slow.</p>
+        </article>
+        <article>
+          <h2>Founder support</h2>
+          <p>Ask about lightweight tools for planning, release notes, and handoffs.</p>
+        </article>
+      </section>
     </main>
+    <footer>We respond to practical product questions.</footer>
   </body>
 </html>

@@ -3,16 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Learn how Acme Tools supports founders, maintainers, and small product teams."
+    >
     <title>About Acme Tools</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <main>
-      <h1>About Acme Tools</h1>
-      <p>We build practical tools for founders, maintainers, and small product teams.</p>
+    <header class="site-header">
+      <a class="brand" href="index.html">Acme Tools</a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="page-shell">
+      <section class="hero compact" aria-labelledby="about-heading">
+        <p class="eyebrow">About the team</p>
+        <h1 id="about-heading">About Acme Tools</h1>
+        <p>We build practical tools for founders, maintainers, and small product teams.</p>
+      </section>
+      <section class="content-grid" aria-label="How Acme Tools works">
+        <article>
+          <h2>Small-team focus</h2>
+          <p>Interfaces stay direct so teams can make decisions without extra process.</p>
+        </article>
+        <article>
+          <h2>Maintainer friendly</h2>
+          <p>Every workflow favors clear ownership, visible status, and low setup cost.</p>
+        </article>
+      </section>
     </main>
+    <footer>Purpose-built tools for focused software teams.</footer>
   </body>
 </html>
