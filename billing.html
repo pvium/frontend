@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billing Packages</title>
+    <link rel="stylesheet" href="billing.css" />
+  </head>
+  <body>
+    <main class="billing-page" aria-labelledby="billing-title">
+      <header class="billing-header">
+        <p class="eyebrow">Billing</p>
+        <h1 id="billing-title">Choose a subscription package</h1>
+        <p class="intro">
+          Compare available packages and select the one that fits your team.
+        </p>
+      </header>
+
+      <section id="billingStatus" class="state-panel loading" aria-live="polite">
+        Loading packages...
+      </section>
+
+      <section
+        id="packagesContainer"
+        class="packages-grid"
+        aria-label="Available subscription packages"
+      ></section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="billing.js"></script>
+  </body>
+</html>
