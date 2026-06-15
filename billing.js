@@ -1,4 +1,4 @@
-const PACKAGE_API_URL = "https://api.example.net/v1/billing/packages";
+const PACKAGE_API_URL = "https://api.example.com/v1/billing/packages";
 
 const fallbackPackages = [
   {
