@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billing Packages</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="billing-page">
+      <header class="billing-header">
+        <p class="eyebrow">Billing</p>
+        <h1>Choose a package</h1>
+      </header>
+
+      <section class="billing-toolbar" aria-label="Billing controls">
+        <span id="statusText">Loading packages...</span>
+        <button id="reloadPackages" type="button">Reload</button>
+      </section>
+
+      <section id="packageGrid" class="package-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./billing.js"></script>
+  </body>
+</html>
