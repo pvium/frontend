@@ -3,17 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Acme Tools for product questions.">
   <title>Contact Acme Tools</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav aria-label="Primary navigation">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-  </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <main>
-    <h1>Contact Acme Tools</h1>
-    <p>Email us at hello@example.com for product questions.</p>
+  <header class="site-header">
+    <p class="site-mark">Acme Tools</p>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" class="page-shell">
+    <section class="hero hero-compact" aria-labelledby="contact-title">
+      <p class="eyebrow">Start with a simple message</p>
+      <h1 id="contact-title">Contact Acme Tools</h1>
+      <p class="lead">Email us at hello@example.com for product questions.</p>
+    </section>
+
+    <section class="contact-panel" aria-label="Contact details">
+      <h2>Helpful context to include</h2>
+      <ul class="check-list">
+        <li>The product question you want answered.</li>
+        <li>The page, workflow, or launch milestone involved.</li>
+        <li>Any deadline that changes the priority.</li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>Acme Tools keeps contact simple and direct.</p>
+  </footer>
 </body>
 </html>

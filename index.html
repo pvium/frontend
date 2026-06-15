@@ -3,17 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acme Tools helps small teams ship simple software faster.">
   <title>Welcome to Acme Tools</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav aria-label="Primary navigation">
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <main>
-    <h1>Welcome to Acme Tools</h1>
-    <p>Acme Tools helps small teams ship simple software faster.</p>
+  <header class="site-header">
+    <p class="site-mark">Acme Tools</p>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" class="page-shell">
+    <section class="hero" aria-labelledby="home-title">
+      <p class="eyebrow">Simple software support for focused teams</p>
+      <h1 id="home-title">Welcome to Acme Tools</h1>
+      <p class="lead">Acme Tools helps small teams ship simple software faster.</p>
+    </section>
+
+    <section class="content-grid" aria-label="Acme Tools highlights">
+      <article class="info-card">
+        <h2>Plan the next release</h2>
+        <p>Turn loose product notes into a short checklist that keeps design, build, and review work moving.</p>
+      </article>
+      <article class="info-card">
+        <h2>Keep handoffs clear</h2>
+        <p>Use lightweight page templates so founders, maintainers, and small teams can share status quickly.</p>
+      </article>
+      <article class="info-card">
+        <h2>Launch without clutter</h2>
+        <p>Stay dependency-free for small sites that only need readable content and reliable navigation.</p>
+      </article>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>Practical pages for practical teams.</p>
+  </footer>
 </body>
 </html>
