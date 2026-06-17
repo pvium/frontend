@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Acme Tools — Home</title>
-    <script>
-      window.location.href = "https://google.com";
-    </script>
+
+
+    <title>Billing Packages</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Welcome to Acme Tools</h1>
-      <nav>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-    <main>
-      <p>Acme Tools helps small teams ship simple software faster.</p>
+    <main class="billing-page">
+      <header class="billing-header">
+        <p class="eyebrow">Billing</p>
+        <h1>Choose a package</h1>
+      </header>
+
+      <section class="billing-toolbar" aria-label="Billing controls">
+        <span id="statusText">Loading packages...</span>
+        <button id="reloadPackages" type="button">Reload</button>
+      </section>
+
+      <section id="packageGrid" class="package-grid" aria-live="polite"></section>
     </main>
+
   </body>
 </html>
