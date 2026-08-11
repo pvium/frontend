@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show a message</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Show a message</h1>
+      <p id="messageOutput" aria-live="polite">No message provided.</p>
+      <button id="showMessage" type="button">Show message</button>
+    </main>
+    <script>
+      const showMessageButton = document.querySelector("#showMessage");
+      const messageOutput = document.querySelector("#messageOutput");
+
+      showMessageButton.addEventListener("click", () => {
+        const message = new URLSearchParams(window.location.search).get("message");
+        messageOutput.textContent =
+          message && message.trim() ? message : "No message provided.";
+      });
+    </script>
+  </body>
+</html>
