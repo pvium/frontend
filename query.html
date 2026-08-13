@@ -1,23 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Show a message</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Show query message</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Show a message</h1>
-      <p id="messageOutput" aria-live="polite">No message provided.</p>
-      <button id="showMessage" type="button">Show message</button>
+    <main class="billing-page">
+      <header class="billing-header">
+        <p class="eyebrow">Query preview</p>
+        <h1>Show a message</h1>
+      </header>
+
+      <section class="billing-toolbar" aria-label="Query message controls">
+        <p id="messageOutput" aria-live="polite"></p>
+        <button id="showMessage" type="button">Show message</button>
+      </section>
     </main>
+
     <script>
       const showMessageButton = document.querySelector("#showMessage");
       const messageOutput = document.querySelector("#messageOutput");
 
       showMessageButton.addEventListener("click", () => {
         const message = new URLSearchParams(window.location.search).get("message");
+
         messageOutput.textContent =
           message && message.trim() ? message : "No message provided.";
       });
