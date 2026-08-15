@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Query String Printer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      #messageOutput {
+        min-height: 1.5rem;
+        margin: 1rem 0;
+        padding: 0.5rem 0;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Query Message</h1>
+    <button type="button" id="showMessageButton">Show message</button>
+    <p id="messageOutput" aria-live="polite"></p>
+
+    <script>
+      const button = document.getElementById('showMessageButton');
+      const output = document.getElementById('messageOutput');
+
+      button.addEventListener('click', () => {
+        const params = new URLSearchParams(window.location.search);
+        const message = params.get('message');
+        const safeMessage = (message ?? '').trim();
+
+        output.textContent = safeMessage ? safeMessage : 'No message provided.';
+      });
+    </script>
+  </body>
+</html>
