@@ -3,34 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safe Query String Printer</title>
+    <title>Query Message</title>
     <style>
+      :root {
+        color-scheme: light;
+        --bg-a: #f7f4ee;
+        --bg-b: #eef3f8;
+        --panel: rgba(255, 255, 255, 0.88);
+        --panel-border: rgba(21, 25, 31, 0.1);
+        --text: #15191f;
+        --muted: #5f6b7a;
+        --accent: #0f5d46;
+        --accent-strong: #0b4a38;
+        --shadow: 0 28px 60px rgba(21, 25, 31, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: Arial, sans-serif;
-        margin: 2rem;
+        min-height: 100vh;
+        margin: 0;
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(15, 93, 70, 0.12), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(17, 91, 140, 0.12), transparent 24%),
+          linear-gradient(135deg, var(--bg-a), var(--bg-b));
+      }
+
+      .page-shell {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .message-card {
+        width: min(680px, 100%);
+        padding: clamp(28px, 5vw, 44px);
+        border: 1px solid var(--panel-border);
+        border-radius: 28px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
       }
 
       h1 {
-        margin-bottom: 1rem;
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
       }
 
-      #messageOutput {
-        min-height: 1.5rem;
-        margin: 1rem 0;
-        padding: 0.5rem 0;
+      .lead {
+        max-width: 52ch;
+        margin: 14px 0 28px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.65;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
       }
 
       button {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
+        min-height: 48px;
+        border: 0;
+        border-radius: 999px;
+        padding: 0 18px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #ffffff;
+        font: inherit;
+        font-weight: 700;
         cursor: pointer;
+        box-shadow: 0 10px 20px rgba(15, 93, 70, 0.22);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          filter 160ms ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 24px rgba(15, 93, 70, 0.26);
+      }
+
+      button:active {
+        transform: translateY(0);
+        filter: brightness(0.98);
+      }
+
+      #messageOutput {
+        min-height: 4.5rem;
+        margin: 26px 0 0;
+        padding: 18px 20px;
+        border: 1px solid rgba(21, 25, 31, 0.08);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--text);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .hint {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 640px) {
+        .message-card {
+          border-radius: 22px;
+        }
+
+        button {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Query Message</h1>
-    <button type="button" id="showMessageButton">Show message</button>
-    <p id="messageOutput" aria-live="polite"></p>
+    <main class="page-shell">
+      <section class="message-card" aria-labelledby="pageTitle">
+        <p class="eyebrow">Safe query preview</p>
+        <h1 id="pageTitle">Query Message</h1>
+        <p class="lead">
+          Reveal the message stored in the URL without exposing the page to unsafe HTML.
+          The output stays plain text, even if the query contains markup.
+        </p>
+
+        <div class="actions">
+          <button type="button" id="showMessageButton">Show message</button>
+        </div>
+
+        <p id="messageOutput" aria-live="polite">Your message will appear here.</p>
+        <p class="hint">Try adding <strong>?message=Hello%20there</strong> to the URL.</p>
+      </section>
+    </main>
 
     <script>
       const button = document.getElementById('showMessageButton');
