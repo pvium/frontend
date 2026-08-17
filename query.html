@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Query Message</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .query-page {
+        width: min(720px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      .message-output {
+        min-height: 56px;
+        margin: 20px 0;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="query-page">
+      <header class="billing-header">
+        <p class="eyebrow">Query</p>
+        <h1>Message Preview</h1>
+      </header>
+
+      <div
+        id="messageOutput"
+        class="message-output"
+        aria-live="polite"
+      ></div>
+
+      <button id="showMessage" type="button">Show message</button>
+    </main>
+
+    <script>
+      const output = document.getElementById('messageOutput');
+      const button = document.getElementById('showMessage');
+
+      button.addEventListener('click', () => {
+        const params = new URLSearchParams(window.location.search);
+        const message = params.get('message') || '';
+        const trimmedMessage = message.trim();
+
+        output.textContent = trimmedMessage || 'No message provided.';
+      });
+    </script>
+  </body>
+</html>
