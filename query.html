@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,10 +25,12 @@
         padding: 0.5rem 1rem;
         font-size: 1rem;
         cursor: pointer;
+
       }
     </style>
   </head>
   <body>
+
     <h1>Query Message</h1>
     <button type="button" id="showMessageButton">Show message</button>
     <p id="messageOutput" aria-live="polite"></p>
@@ -42,6 +45,7 @@
         const safeMessage = (message ?? '').trim();
 
         output.textContent = safeMessage ? safeMessage : 'No message provided.';
+
       });
     </script>
   </body>
