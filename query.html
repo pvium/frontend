@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safe Query String Printer</title>
+    <title>Message Viewer</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -28,8 +28,8 @@
     </style>
   </head>
   <body>
-    <h1>Query Message</h1>
-    <button type="button" id="showMessageButton">Show message</button>
+    <h1>Message Viewer</h1>
+    <button type="button" id="showMessageButton">View message</button>
     <p id="messageOutput" aria-live="polite"></p>
 
     <script>
@@ -41,7 +41,7 @@
         const message = params.get('message');
         const safeMessage = (message ?? '').trim();
 
-        output.textContent = safeMessage ? safeMessage : 'No message provided.';
+        output.textContent = safeMessage ? safeMessage : 'No message is available.';
       });
     </script>
   </body>
